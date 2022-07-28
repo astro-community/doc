@@ -1,0 +1,59 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "@astropub/doc",
+	"description": "Create document layouts with minimal markup in Astro",
+	"version": "0.1.0",
+	"type": "module",
+	"license": "CC0-1.0",
+	"exports": {
+		".": {
+			"default": "./astro-doc.js",
+			"types": "./astro-doc.d.ts"
+		},
+		"./astro-doc": {
+			"default": "./astro-doc.js",
+			"types": "./astro-doc.d.ts"
+		},
+		"./package": "./package.json",
+		"./package.json": "./package.json"
+	},
+	"main": "astro-doc.js",
+	"types": "astro-doc.d.ts",
+	"unpkg": "astro-doc.js",
+	"jsdelivr": "astro-doc.js",
+	"sideEffects": false,
+	"files": [
+		"astro-doc.js",
+		"astro-doc.d.ts",
+		"astro-document.astro",
+		"astro-element.astro",
+		"astro-meta.js",
+		"astro-resource.js",
+		"package.json",
+		"shared.js"
+	],
+	"keywords": [
+		"astro",
+		"astro-component",
+		"ui",
+		"perf",
+		"performance",
+		"attribute",
+		"attributes",
+		"automatic",
+		"body",
+		"content",
+		"component",
+		"document",
+		"element",
+		"elements",
+		"head",
+		"html",
+		"layout",
+		"tag"
+	],
+	"author": "Jonathan Neal <jonathantneal@hotmail.com>",
+	"bugs": "https://github.com/astro-community/astro-doc/issues",
+	"homepage": "https://github.com/astro-community/astro-doc",
+	"repository": "https://github.com/astro-community/astro-doc.git"
+}

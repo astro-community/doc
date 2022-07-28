@@ -1,0 +1,92 @@
+---
+/// <reference types="astro/client" />
+
+import type { Props } from './astro-doc.d'
+
+/** Returns whether the attribute exists on Astro.props. */
+const hasAttribute = (name: any) => name in Astro.props
+
+/** Returns whether the content value is present and not empty. */
+const isValidContent = (content: any) => content != null && String(content).trim() !== ''
+
+/** Returns the path or URL as a full path. */
+const getFullHref = (url: any) => url == null ? url : new URL(url, Astro.site?.href || 'http://localhost/').href
+
+/** Returns the icon content type from the path. */
+const getIconType = (icon = '') => icon.includes('.svg') ? 'image/svg+xml' : icon.includes('.gif') ? 'image/gif' : null
+
+let {
+	charset = 'utf-8',
+	description,
+	disabledadaptations = 'watch',
+	favicon,
+	imagealt,
+	imageurl,
+	robots,
+	sitetitle,
+	tabtitle,
+	title,
+	touchicon,
+	twittercard,
+	type,
+	url = Astro.url.href,
+	viewport = 'width=device-width',
+	...attributes
+} = Astro.props as Props
+
+/** Attributes applied to the document <head> element. */
+const headAttributes = {}
+
+/** Attributes applied to the document <body> element. */
+const bodyAttributes = {}
+
+// separate attributes starting with either head- or body-.
+for (let attributeName in attributes) {
+	let bodyAttributeName = attributeName.replace(/^body-/, '')
+
+	if (attributeName !== bodyAttributeName && bodyAttributeName) {
+		bodyAttributes[bodyAttributeName] = attributes[attributeName]
+
+		continue
+	}
+
+	let headAttributeName = attributeName.replace(/^head-/, '')
+
+	if (attributeName !== headAttributeName && headAttributeName) {
+		headAttributes[headAttributeName] = attributes[attributeName]
+
+		continue
+	}
+}
+
+// if an image is found and twittercard is not set
+if (imageurl && twittercard === undefined) {
+	// automatically define <meta name="twitter:card" />
+	twittercard = 'summary_large_image'
+}
+
+---
+<html {...attributes}>
+	<head {...bodyAttributes}>
+		{isValidContent(charset) && <meta charset={charset} />}
+		{isValidContent(tabtitle) && <title>{tabtitle}</title>}
+		{!hasAttribute(tabtitle) && isValidContent(title) && <title>{title}</title>}
+		{isValidContent(viewport) && <meta name="viewport" content={viewport} />}
+		{isValidContent(disabledadaptations) && <meta name="disabled-adaptations" content={disabledadaptations} />}
+		{isValidContent(robots) && <meta name="robots" content={robots} />}
+		{isValidContent(description) && <meta name="description" content={description} />}
+		{isValidContent(twittercard) && <meta name="twitter:card" content={twittercard} />}
+		{isValidContent(title) && <meta property="og:title" content={title} />}
+		{isValidContent(imageurl) && <meta property="og:image" content={getFullHref(imageurl)} />}
+		{isValidContent(imagealt) && <meta property="og:image:alt" content={imagealt} />}
+		{isValidContent(sitetitle) && <meta property="og:site_name" content={sitetitle} />}
+		{isValidContent(type) && <meta property="og:type" content={type} />}
+		{isValidContent(url) && <meta property="og:url" content={getFullHref(url)} />}
+		{isValidContent(favicon) && <link rel="icon" type={getIconType(String(favicon))} href={getFullHref(favicon)} />}
+		{isValidContent(touchicon) && <link rel="apple-touch-icon" sizes="180x180" href={getFullHref(touchicon)} />}
+		<slot name="head" />
+	</head>
+	<body {...bodyAttributes}>
+		<slot />
+	</body>
+</html>

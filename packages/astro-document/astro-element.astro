@@ -1,0 +1,9 @@
+---
+import { componentType, preventRender } from './shared.js'
+
+const Tag = Astro.props[componentType as any] || Fragment
+const shouldRender = !Astro.props[preventRender as any]
+
+const { ...attributes } = Astro.props
+---
+{shouldRender && <Tag {...attributes}><slot /></Tag>}

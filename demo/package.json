@@ -1,7 +1,7 @@
 {
 	"name": "astro-doc-demo",
 	"type": "module",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"private": true,
 	"scripts": {
 		"start": "astro dev",
@@ -9,7 +9,7 @@
 		"serve": "astro preview"
 	},
 	"devDependencies": {
-		"@astropub/doc": "0.1.1",
+		"@astropub/doc": "0.1.2",
 		"astro": "latest"
 	}
 }

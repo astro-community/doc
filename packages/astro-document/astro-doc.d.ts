@@ -12,9 +12,9 @@ export interface Props {
 
 	class?: string
 
-	disabledadaptations?: 'watch'
+	disabledadaptations?: 'watch' | string
 
-	robots?: Robots | `${Robots},${Robots}`
+	robots?: Robots | `${Robots},${Robots}` | string
 
 	/** Page title used by embeds. */
 	title?: string
@@ -23,7 +23,7 @@ export interface Props {
 	tabtitle?: string
 
 	/** Page type used by embeds. */
-	type?: OpenGraph
+	type?: OpenGraph | string
 
 	/** Page description used by embeds. */
 	description?: string
@@ -41,18 +41,20 @@ export interface Props {
 	sitetitle?: string
 
 	/** Page icon used in tab experiences. */
-	favicon?: 'favicon.ico' | 'favicon.svg'
+	favicon?: '/favicon.ico' | '/favicon.svg' | string
 
 	/** Page icon used in app experiences. */
-	touchicon?: 'apple-touch-icon.png'
+	touchicon?: '/apple-touch-icon.png' | string
 
-	twittercard?: 'summary' | 'summary_large_image'
+	twittercard?: 'summary' | 'summary_large_image' | string
 
 	/** Page IETF language identifier. */
-	lang?: LanguageCode
+	lang?: LanguageCode | string
 
-	viewport?: 'width=device-width'
+	viewport?: 'width=device-width' | string
 }
+
+export { Props as DocumentProps }
 
 export function Document(props: Props): any
 

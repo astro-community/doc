@@ -7,28 +7,54 @@ export type LanguageCode = 'ab' | 'ace' | 'ada' | 'ady' | 'aa' | 'afh' | 'af' | 
 export type OpenGraph = 'website' | 'apps.saves' | 'article' | 'book' | 'books.author' | 'books.book' | 'books.genre' | 'business.business' | 'fitness.course' | 'game.achievement' | 'games.achieves' | 'games.celebrate' | 'games.plays' | 'games.saves' | 'music.album' | 'music.playlist' | 'music.radio_station' | 'music.song' | 'news.publishes' | 'og.follows' | 'og.likes' | 'pages.saves' | 'place' | 'product' | 'product.group' | 'product.item' | 'profile' | 'restaurant.menu' | 'restaurant.menu_item' | 'restaurant.menu_section' | 'restaurant.restaurant' | 'restaurant.visited' | 'restaurant.wants_to_visit' | 'sellers.rates' | 'video.episode' | 'video.movie' | 'video.other' | 'video.tv_show'
 export type Robots = 'index' | 'noindex' | 'follow' | 'nofollow' | 'all' | 'none' | 'noarchive' | 'nosnippet' | 'noimageindex' | 'nocache'
 
-export interface Props {
+export interface GlobalAttributes {
+	/** List of space-separated classes for the element. */
+	class?: string
+	/** How the element should be editable by the user. */
+	contenteditable?: '' | 'true' | 'false' | 'caret' | 'events' | 'plaintext-only' | 'typing' | boolean | string
+
+	/** Directionality of the element's text. */
+	dir?: 'ltr' | 'rtl' | 'auto' | string
+
+	/** How the element is relevant. */
+	hidden?: '' | 'until-found' | boolean | string
+
+	/** Unique identifier for the element. */
+	id?: string
+
+	/** Page IETF language identifier. */
+	lang?: LanguageCode | string
+
+	/** Styling applied to the element. */
+	style?: string
+
+	/** How the attributes, values, and text should be translated when localized. */
+	translate?: '' | 'no' | 'yes'
+}
+
+export interface Props extends GlobalAttributes {
+	/** Defines the character encoding for the document. By default, this is `utf-8`. */
 	charset?: 'utf-8' | string
 
-	class?: string
-
+	/** Defines whether the website is compatible without adaptations smaller viewports. */
 	disabledadaptations?: 'watch' | string
 
+	/** How search engines should follow the document. */
 	robots?: Robots | `${Robots},${Robots}` | string
 
-	/** Page title used by embeds. */
+	/** Title of the document, without any additional taglines. */
 	title?: string
 
-	/** Page title used in tab experiences. */
+	/** Title of the document used by the tab, which may include additional taglines. */
 	tabtitle?: string
 
-	/** Page type used by embeds. */
+	/** Category type of the document. By default, this is `webpage`. */
 	type?: OpenGraph | string
 
-	/** Page description used by embeds. */
+	/** Summary of the content of the document. */
 	description?: string
 
-	/** Page URL used by embeds. */
+	/** Canonical URL of the document. */
 	url?: string | URL
 
 	/** Page image URL used by embeds. */
@@ -41,16 +67,15 @@ export interface Props {
 	sitetitle?: string
 
 	/** Page icon used in tab experiences. */
-	favicon?: '/favicon.ico' | '/favicon.svg' | string
+	icon?: '/icon.ico' | '/icon.svg' | string
 
 	/** Page icon used in app experiences. */
 	touchicon?: '/apple-touch-icon.png' | string
 
+	/** Summary card used by Twitter. */
 	twittercard?: 'summary' | 'summary_large_image' | string
 
-	/** Page IETF language identifier. */
-	lang?: LanguageCode | string
-
+	/** Area through which the document is viewed. */
 	viewport?: 'width=device-width' | string
 }
 

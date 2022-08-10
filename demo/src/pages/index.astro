@@ -9,6 +9,45 @@ import { Document } from '@astropub/doc'
 		<strong>Astro Doc</strong> helps you create document layouts for your site.
 	</p>
 	<p>
-		You might need to view the source to see what that means.
+		You write this:
 	</p>
+	<pre>&lt;Document title="Astro Doc" body-class="p-body"&gt;
+	&lt;h1&gt;
+		Astro Doc
+	&lt;/h1&gt;
+	&lt;p&gt;
+		The HTML, HEAD, and BODY tags are all set.
+	&lt;/p&gt;
+&lt;/Document&gt;</pre>
+	<p>
+		You get this:
+	</p>
+	<pre>{`
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Astro Doc</title>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="disabled-adaptations" content="watch" />
+		<meta property="og:title" content="Astro Doc" />
+	</head>
+	<body class="p-body">
+		<h1>
+			Astro Doc
+		</h1>
+		<p>
+			The HTML, HEAD, and BODY tags are all set.
+		</p>
+	</body>
+</html>`.trim()}</pre>
 </Document>
+<style is:global>
+body {
+	font: 100%/1.5 system-ui;
+	margin: max(2em, 2vmax);
+}
+pre {
+	tab-size: 4;
+}
+</style>

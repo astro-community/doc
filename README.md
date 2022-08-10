@@ -4,6 +4,7 @@
 
 [![NPM Version][npm-img]][npm-url]
 [![NPM Downloads][download-img]][download-url]
+[![Open in StackBlitz][stackblitz-img]][stackblitz-url]
 
 You write this:
 
@@ -279,7 +280,5 @@ Read the [Astro documentation][docs-url] or jump into the [Astro Discord][chat-u
 [stackblitz-url]: https://stackblitz.com/github/astro-community/astro-doc
 [bundlejs-img]: https://img.shields.io/badge/dynamic/json?url=https://bundlejs.com/api?q=@astropub/doc&query=size.totalCompressedSize&color=%23444&labelColor=%233B82F6&label=&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MDAgNzAwIiBmaWxsPSIjRkZGIj4KCTxwYXRoIGQ9Ik0xNDYgMkExNzEgMTcxIDAgMCAwIDMgMTM5bC0yIDExdjQwMmwyIDExYzE1IDcyIDcxIDEyNSAxNDMgMTM2bDIwOSAxIDE5OS0xIDktMmM3MC0xNiAxMTktNjYgMTM0LTEzNWwyLTEwVjE1MGwtMi0xMkExNzEgMTcxIDAgMCAwIDU2MiAzbC0xMC0yLTE5OS0xQzE4NyAwIDE1MyAwIDE0NiAyem0xODEgMjUxdjM2bDctM2MxMy02IDMzLTkgNTAtNyA0MSA1IDcwIDM0IDgwIDc4IDIgMTIgMiA0MSAwIDUzLTUgMjItMTMgMzgtMjcgNTJhODIgODIgMCAwIDEtNjMgMjZjLTE1IDAtMTkgMC0yNS0yLTEwLTItMTctNi0yNC0xMGwtNS0zdjExaC00NVYyMTdoNTJ2MzZ6bTI5IDcxYy0yMCAzLTMyIDE5LTM1IDQ4LTMgMjUgMyA0OCAxNCA2MCA1IDYgMTMgMTAgMjMgMTEgMjUgNCA0NC05IDUxLTM2bDMtMTljMC0xNy0xLTI3LTctMzktOS0xOS0yNi0yOC00OS0yNXoiLz4KPC9zdmc+&style=for-the-badge
 [bundlejs-url]: https://bundlejs.com/?bundle&q=@astropub/doc
-[license-img]: https://img.shields.io/npm/l/@astropub/doc?color=%23444&labelColor=%232DA44E&label=&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0iI0ZGRiI+PHBhdGggZD0iTTMxLjk2LjMxYTMwLjQ3IDMwLjQ3IDAgMCAwLTIyLjIzIDkuMkEzMS45IDMxLjkgMCAwIDAgLjM1IDMyYTMxLjEgMzEuMSAwIDAgMCA5LjMgMjIuMzEgMzEuMzYgMzEuMzYgMCAwIDAgMjIuMyA5LjM4IDMyLjIgMzIuMiAwIDAgMCAyMi42Ny05LjQ2YzUuOS01LjgyIDkuMDMtMTMuNTUgOS4wMy0yMi4yMyAwLTguNi0zLjEzLTE2LjQtOS4xMi0yMi40QTMxLjI4IDMxLjI4IDAgMCAwIDMxLjk2LjMxem0uMDggNS43M2EyNS41IDI1LjUgMCAwIDEgMTguNCA3LjY0QTI1LjUgMjUuNSAwIDAgMSA1Ny45MyAzMmMwIDcuMTItMi41MiAxMy4zNy03LjM4IDE4LjE1YTI2LjM0IDI2LjM0IDAgMCAxLTE4LjUgNy43MiAyNS41NyAyNS41NyAwIDAgMS0xOC4yMy03LjY0QTI1LjggMjUuOCAwIDAgMSA2LjA4IDMyYTI2LjIgMjYuMiAwIDAgMSA3LjczLTE4LjQgMjQuOSAyNC45IDAgMCAxIDE4LjIzLTcuNTZ6Ii8+PHBhdGggaWQ9ImEiIGQ9Ik0zMS42NCAyNi43M2MtMS44LTMuMjYtNC44NS00LjU2LTguNC00LjU2LTUuMTUgMC05LjI2IDMuNjUtOS4yNiA5LjgzIDAgNi4yOCAzLjg2IDkuODMgOS40NCA5LjgzYTkuNSA5LjUgMCAwIDAgOC4zMi00Ljk1bC0zLjkzLTJjLS44OCAyLjEtMi4yMSAyLjc0LTMuOSAyLjc0LTIuOTEgMC00LjI1LTIuNDMtNC4yNS01LjYyIDAtMy4yIDEuMTMtNS42MiA0LjI1LTUuNjIuODUgMCAyLjUzLjQ2IDMuNTEgMi41N2w0LjIxLTIuMjJ6Ii8+PHVzZSBocmVmPSIjYSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTguMjgpIi8+PC9zdmc+&style=for-the-badge
-[license-url]: https://choosealicense.com/licenses/cc0-1.0/
 [download-url]: https://www.npmjs.com/package/@astropub/doc
-[download-img]: https://img.shields.io/badge/dynamic/json?url=https://api.npmjs.org/downloads/point/last-week/@astropub/doc&query=downloads&label=↓/week&color=%23444&labelColor=%23EEd100&style=for-the-badge
+[download-img]: https://img.shields.io/badge/dynamic/json?url=https://api.npmjs.org/downloads/point/last-week/@astropub/doc&query=downloads&label=⇓+week&color=%23444&labelColor=%23EEd100&style=for-the-badge
